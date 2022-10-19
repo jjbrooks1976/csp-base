@@ -41,7 +41,7 @@ public class Main : MonoBehaviour
 
     public void OnErrorCorrectionToggled(bool value)
     {
-        //this.simulation.errorCorrection = value;
+        this.simulation.errorCorrection = value;
         this.correctionSmoothingToggle.interactable = value;
 
     }
