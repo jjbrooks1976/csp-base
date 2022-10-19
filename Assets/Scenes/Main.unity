@@ -950,7 +950,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 512661503}
         m_TargetAssemblyTypeName: Main, Assembly-CSharp
-        m_MethodName: OnServerLatencyChanged
+        m_MethodName: OnLatencyChanged
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1218,14 +1218,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instance: {fileID: 0}
+  simulation: {fileID: 2053205579}
+  serverDisplayPlayer: {fileID: 579593188}
   errorCorrectionToggle: {fileID: 854616421}
   correctionSmoothingToggle: {fileID: 826732240}
   redundantInputToggle: {fileID: 1545589991}
   serverPlayerToggle: {fileID: 1256395516}
   packetLossLabel: {fileID: 1847983682}
   packetLossSlider: {fileID: 206836415}
-  serverLatencyLabel: {fileID: 728754738}
-  serverLatencySlider: {fileID: 413156588}
+  latencyLabel: {fileID: 728754738}
+  latencySlider: {fileID: 413156588}
   snapshotRateLabel: {fileID: 1523137102}
   snapshotRateSlider: {fileID: 2058704411}
 --- !u!4 &512661504
@@ -1290,7 +1292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 542132226}
   m_Layer: 5
-  m_Name: Server Latency
+  m_Name: Total Latency
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1709,7 +1711,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Server Latency - 50ms
+  m_Text: Latency - 50ms
 --- !u!222 &728754739
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2155,7 +2157,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 960452207}
   toggleTransition: 1
   graphic: {fileID: 430432001}
@@ -3446,6 +3448,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05bb034374fb42a58fe365cd77c0f37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clientPlayer: {fileID: 767102048}
+  smoothedClientPlayer: {fileID: 2037125730}
+  serverPlayer: {fileID: 2084854767}
+  serverDisplayPlayer: {fileID: 579593188}
+  latency: 0.1
+  packetLoss: 0.05
+  errorCorrection: 1
+  correctionSmoothing: 1
+  redundantInput: 1
+  snapshotRate: 0
 --- !u!1 &2058704409
 GameObject:
   m_ObjectHideFlags: 0
